@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Flutter Demo',
+      title: 'Navbar GoRouter',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -39,6 +39,7 @@ class HomeScreen extends StatelessWidget {
           const Icon(Icons.home),
           ElevatedButton(
             onPressed: () {
+              // Para navegar enttre pantallas se usa esto
               context.go("/profile");
             },
             child: const Text("Ir a Profile"),

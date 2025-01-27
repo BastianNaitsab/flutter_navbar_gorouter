@@ -1,38 +1,35 @@
-# 🚀 Flutter Learning Project
+# 🚀 Flutter Learning Navbar GoRouter
 
 [![Flutter](https://img.shields.io/badge/Flutter-Framework-blue)](https://flutter.dev)
 ![Dart](https://img.shields.io/badge/Dart-Language-blue)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-![Screen Timer](https://bloclibrary.dev/_astro/flutter-counter.B_w0ovsj_1isDyF.webp)
+![Screen Timer](captura.png)
 
 ## 📚 Descripción
 
-Este es un proyecto creado para aprender y experimentar con Flutter. **Flutter** es un framework de desarrollo móvil multiplataforma desarrollado por Google que permite crear aplicaciones nativas para iOS y Android con una sola base de código.
+Este es un proyecto creado para aprender y experimentar con Flutter y la librería **GoRouter** para la navegación entre pantallas. Flutter es un framework de desarrollo móvil multiplataforma desarrollado por Google que permite crear aplicaciones nativas para iOS y Android con una sola base de código.
 
 ## 🎯 Objetivo del Proyecto
 
 - Entender los conceptos básicos de Flutter.
-- Experimentar con widgets y layout.
-- Practicar la navegación entre pantallas.
-- Implementar funcionalidad básica como formularios, animaciones y manejo de estado.
+- Experimentar con **GoRouter** para la navegación declarativa entre pantallas.
+- Implementar una barra de navegación fija con **BottomNavigationBar**.
+- Mejorar la experiencia de navegación añadiendo animaciones y transiciones.
 
 ## 🛠️ Características
 
-- **Widget Tree:** Explorar cómo funcionan los widgets en Flutter.
-- **Diseño Responsivo:** Crear interfaces adaptables.
-- **Gestión de Estado:** Practicar con soluciones como `setState`, `Provider` o `Riverpod`.
-- **Integración:** Conectar APIs o manejar bases de datos locales como SQLite.
+- **GoRouter**: Configuración de rutas y navegación declarativa.
+- **ShellRoute**: Implementación de rutas anidadas con un esquema de navegación fijo.
+- **BottomNavigationBar**: Barra de navegación con íconos y selección visual.
+- **NoTransitionPage**: Transiciones sin animación entre pantallas para un cambio más rápido.
 
 ## 📂 Estructura del Proyecto
 
 ```plaintext
 lib/
-├── main.dart           # Punto de entrada de la app
-├── screens/            # Pantallas principales
-├── widgets/            # Widgets personalizados
-├── models/             # Modelos de datos
-├── services/           # Servicios como APIs o bases de datos
+├── main.dart           # Punto de entrada de la app y Pantallas de navegacion
+├── routing/            # Configuración de rutas
 ```
 
 ## 🚀 Cómo Ejecutar el Proyecto
@@ -42,13 +39,13 @@ lib/
 2. Clona este repositorio:
 
 ```bash
-git clone https://github.com/DevmenteSac/flutter_timer
+git clone https://github.com/BastianNaitsab/flutter_navbar_gorouter
 ```
 
 3. Navega al directorio:
 
 ```bash
-cd nombre-del-repo
+cd flutter_navbar_gorouter
 ```
 
 4. Instala las dependencias:
@@ -69,17 +66,19 @@ flutter run
 - **Dart:** Lenguaje de Programacion
 - **VS Code:** Entorno de Desarrollo
 - **Android Studio:** Emulador
-- **Socket IO:** Libreria para WebSocket
+- **GoRouter**: Librería para la navegación declarativa
 
 ## 📖 Lo que He Aprendido
 
-- 🌟 (Añade aquí puntos clave sobre lo aprendido en este proyecto).
+- 🌟 Implementación de rutas con **GoRouter** y **ShellRoute** para navegar entre pantallas.
+- 🌟 Uso de **BottomNavigationBar** para navegación fija con transiciones personalizadas.
+- 🌟 Manejo de **NoTransitionPage** para evitar animaciones predeterminadas en la navegación.
+- 🌟 Implementación de un sistema de navegación reactivo con **GoRouterState**.
 
 ## 📋 Próximos Pasos
 
-- Añadir autenticación.
-- Mejorar la UI/UX.
-- Implementar pruebas unitarias y funcionales.
+- Añadir autenticación y rutas protegidas.
+- Mejorar la UI/UX, haciendo que la barra de navegación sea más interactiva.
 
 ## 🤝 Contribuciones
 

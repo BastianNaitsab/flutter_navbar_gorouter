@@ -20,7 +20,7 @@ GoRouter router() {
         builder: (context, state, child) {
           return Scaffold(
             appBar: AppBar(
-              title: const Text("Go Router Example"),
+              title: const Text("Navbar GoRouter Example"),
             ),
 
             // Aqui se muestran las paginas a las que se navega
