@@ -6,6 +6,7 @@ import '../main.dart';
 
 GoRouter router() {
   return GoRouter(
+    // Ruta inicial, por defecto
     initialLocation: "/home",
     errorBuilder: (context, state) {
       return Scaffold(
@@ -14,6 +15,14 @@ GoRouter router() {
       );
     },
     routes: [
+      // Rutas externas del ShellRoute
+
+      // GoRoute(
+      //   path: "/fav",
+      //   builder: (context, state) => const FavScreen(),
+      //   pageBuilder: (context, state) => NoTransitionPage(child: FavScreen()),
+      // ),
+
       // ShellRoute para la barra de navegación fija
       ShellRoute(
         // Esto es lo que se va a proteger para la navegacion
@@ -24,7 +33,7 @@ GoRouter router() {
             ),
 
             // Aqui se muestran las paginas a las que se navega
-            // es decir, child, es lo unico que cambia aqui
+            // es decir, child, es lo unico que cambia aqui, child es el contenido dinamico
             body: child,
 
             bottomNavigationBar: BottomNavigationBar(
@@ -32,9 +41,11 @@ GoRouter router() {
               selectedItemColor: Colors.deepPurple,
               unselectedItemColor: Colors.grey,
 
+              // Esto es la logica de la navegacion fija
               currentIndex: _getCurrentIndex(state),
               onTap: (index) => _onBottomNavTapped(index, context),
 
+              // Iconos del navbar
               items: const <BottomNavigationBarItem>[
                 BottomNavigationBarItem(
                   icon: Icon(Icons.home),
@@ -63,14 +74,14 @@ GoRouter router() {
             // Se pone el path que se va a usar y la Screen a la que se refiere
             path: "/home",
             builder: (context, state) => const HomeScreen(),
+
+            // Para configurar las transiciones
             pageBuilder: (context, state) =>
                 const NoTransitionPage(child: HomeScreen()),
           ),
           GoRoute(
             path: "/profile",
             builder: (context, state) => const ProfileScreen(),
-
-            // Para manejar las transiciones
             pageBuilder: (context, state) =>
                 const NoTransitionPage(child: ProfileScreen()),
           ),
@@ -88,23 +99,15 @@ GoRouter router() {
           ),
         ],
       ),
-
-      // Rutas externas del ShellRoute
-
-      // GoRoute(
-      //   path: "/fav",
-      //   builder: (context, state) => const FavScreen(),
-      //   pageBuilder: (context, state) => NoTransitionPage(child: FavScreen()),
-      // ),
     ],
   );
 }
 
 // Obtener el índice del BottomNavigationBar basado en la ruta actual
 int _getCurrentIndex(GoRouterState state) {
-  // cada que se agregue o se modifique una navegacion o screen se debe modificar aqui
+  // cada que se agregue o se modifique una navegacion o screen en navbar fijo se debe modificar aqui
 
-  debugPrint(state.matchedLocation);
+  // debugPrint(state.matchedLocation);
   switch (state.matchedLocation) {
     // Usamos state.location aquí
     case '/home':
@@ -122,7 +125,8 @@ int _getCurrentIndex(GoRouterState state) {
 
 // Cambiar la ruta cuando un ítem del BottomNavigationBar es tocado
 void _onBottomNavTapped(int index, BuildContext context) {
-  // cada que se agregue o se modifique una navegacion o screen se debe modificar aqui
+  // cada que se agregue o se modifique una navegacion o screen en navbar fijo se debe modificar aqui
+
   switch (index) {
     case 0:
       context.go('/home');

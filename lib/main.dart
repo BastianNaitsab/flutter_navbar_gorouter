@@ -12,12 +12,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Debemos envolver con MaterialApp.router
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       title: 'Navbar GoRouter',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      // En routerConfig le pasamos el router()
       routerConfig: router(),
     );
   }
@@ -39,7 +42,7 @@ class HomeScreen extends StatelessWidget {
           const Icon(Icons.home),
           ElevatedButton(
             onPressed: () {
-              // Para navegar enttre pantallas se usa esto
+              // Para navegar entre pantallas se usa esto context.go()
               context.go("/profile");
             },
             child: const Text("Ir a Profile"),
@@ -102,27 +105,6 @@ class SettingsScreen extends StatelessWidget {
           Text("Settings View"),
           Icon(Icons.settings),
         ],
-      ),
-    );
-  }
-}
-
-// Pantalla de login (usada para rutas protegidas)
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Login')),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            // Lógica de autenticación (solo ejemplo)
-            context.go('/profile'); // Una vez "logueado", ir al perfil
-          },
-          child: const Text('Iniciar sesión'),
-        ),
       ),
     );
   }
